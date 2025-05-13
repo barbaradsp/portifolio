@@ -1,7 +1,9 @@
+/* Define a cor rosa como uma variável global chamada pink */
 :root{
     --pink:#f376a6;
 }
 
+/* Definições globais de estilo */
 *{
     margin: 0;
     padding: 0;
@@ -21,10 +23,12 @@ html{
     overflow-x: hidden;
 }
 
+/* Define um padding para todos os section */
 section{
     padding: 2rem 9%;
 }
 
+/* Estiliza header */
 header{
     position: fixed;
     top: 0;
@@ -39,111 +43,103 @@ header{
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
 }
 
+/* Estiliza o logo do site */
 header .logo{
     font-size: 3rem;
     font-weight: bolder;
     color: #333;
 }
 
-header .logo span{
-    color: var(--pink);
-}
-
+/* Estiliza a barra de navegação do header */
 header .navbar a{
     font-size: 2rem;
     padding: 0 1.5rem;
     color: #666;
 }
 
+/* Define que ao passar o mouse por cima de um item da navbar ele ficará rosa */
 header .navbar a:hover{
     color: var(--pink);
 }
 
-header .icons a{
-    font-size: 2.5rem;
-    color: #666;
-    margin-left: 1.5rem;
-}
-
-header .icons a:hover{
-    color: var(--pink);
-}
-
-header #toggler {
-    display: none;
-}
-
-header .fa-bars{
-    font-size: 3rem;
-    color: #333;
-    border-radius: .5rem;
-    padding: .5rem 1.5rem;
-    cursor: pointer;
-    border: .1rem solid #333;
-    display: none;
-}
-
+/* Estiliza a home */
 .home {
-    display: flex;
-    align-items: center;
-    min-height: 100vh;
-    background: url(../images/home-bg.jpg) no-repeat;
-    background-size: cover;
-    background-position: center;
+  background-color: #1e1e2f;
+  padding: 55px 20px;
+  color: white;
 }
 
-.home .content{
-    max-width: 50rem;
+.home .container {
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  gap: 50px;
+  flex-wrap: wrap;
+  max-width: 1300px;
+  width: 100%;
 }
 
-.home .content h3{
-    font-size: 4rem;
-    color: #333;
+/* Define tamanho e posição da imagem da home */
+.home .image img {
+  margin-top: 40px;
+  max-width: 100%;
+  height: auto;
+  width: 500px;
 }
 
-.home .content span{
-    font-size: 3.2rem;
-    color: var(--pink);
-    padding: 1rem 0;
-    line-height: 1.5;
+/* Estiliza os textos */
+.home .text {
+  max-width: 550px;
 }
 
-.home .content p{
+.home .text h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.home .text h2 {
+  font-size: 24px;
+  color: #C07693;
+  margin-bottom: 20px;
+}
+
+.home .text p {
+  font-size: 15px; 
+  line-height: 1.6;
+  color: #e0e0e0;
+  text-transform: none; 
+}
+
+/* Estiliza o botão */
+.btn{
+    display: inline-block;
+    margin-top: 3rem;
+    border-radius: 5rem;
+    background: #C07693;
+    color: #fff;
+    padding: .5rem 1rem;
+    cursor: pointer;
     font-size: 1.5rem;
-    color: #999;
-    padding: 1rem 0;
-    line-height: 1.5;
     text-transform: none; 
 }
 
-.btn{
-    display: inline-block;
-    margin-top: 1rem;
-    border-radius: 5rem;
-    background: #333;
-    color: #fff;
-    padding: .9rem 2rem;
-    cursor: pointer;
-    font-size: 1.7rem;
-}
-
+/* Define o estilo do botão quando passar o mouse por cima */
 .btn:hover{
     background: var(--pink);
 }
 
+/* Estiliza todos os textos dos nomes das seções */
 .heading {
     text-align: center;
-    font-size: 4rem;
-    color: #333;
+    font-size: 3.5rem;
+    color: #1e1e2f;
     padding: 1rem;
     margin: 2rem 0;
     background: rgba(255, 51, 153, .05);
 }
 
-.heading span{
-    color: var(--pink);
-}
-
+/* Estiliza a seção "Sobre" */
 .sobre .row{
     display: flex;
     align-items: center;
@@ -172,6 +168,7 @@ header .fa-bars{
     text-transform: none; 
 }
 
+/* Estiliza a seção "Formação e habilidades" */
 .formacao .row{
     display: flex;
     align-items: center;
@@ -200,66 +197,50 @@ header .fa-bars{
     text-transform: none; 
 }
 
-.icons-container{
-    background: #eee;
-    display: flex;
-    flex-wrap: wrap;
-    gap:1.5rem;
-    padding-top: 5rem;
-    padding-bottom: 5rem;
+/* Estiliza a seção "Portifólio" */
+.portifolio .box-container{
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    gap: 1.5rem;
 }
 
-.icons-container .icons{
-    background: #fff;
+.portifolio .box-container .box{
+    max-width: 520px;
+    width: 100%;
+    flex: 1 1 30rem;
+    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+    border-radius: .5rem;
     border: .1rem solid rgba(0, 0, 0, .1);
+    position: relative;
+}
+
+.portifolio .box-container .box .image{
+    position: relative;
+    text-align: center;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+
+.portifolio .box-container .box .image img{
+    height: 25rem;
+}
+
+.portifolio .box-container .box:hover .image img{
+    transform: scale(1.1);
+}
+
+.portifolio .box-container .box .content{
     padding: 2rem;
-    display: flex;
-    align-items: center;
-    flex: 1 1 25rem;
+    text-align: center;
 }
 
-.icons-container .icons img{
-    height: 5rem;
-    margin-right: 2rem;
-}
-
-.icons-container .icons h3{
+.portifolio .box-container .box .content h3{
+    font-size: 1.5rem;
     color: #333;
-    padding-bottom: .5rem;
-    font-size: 1.5rem;
 }
 
-.icons-container .icons span{
-    color: #999;
-    font-size: 1.5rem;
-}
-
-.portifolio .row{
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-    flex-wrap: wrap;
-    padding: 2rem 0;
-    padding-bottom: 3rem;
-}
-
-.portifolio .row .content{
-    flex: 1 1 40rem;
-}
-
-.portifolio .row .content h3{
-    font-size: 2rem;
-    color: #333;
-    padding: 1rem 0;
-}
-
-.portifolio .row .content p{
-    font-size: 1.5rem;
-    color: #999;
-    padding: .5rem 0;
-    line-height: 1.5;
-}
-
+/* Estiliza a seção "Contato" */
 .contato .row{
     display: flex;
     flex-wrap: wrap-reverse;
@@ -302,74 +283,4 @@ header .fa-bars{
 .contato .row form textarea{
     height: 15rem;
     resize: none;
-}
-
-@media (max-width:991px) {
-    html{
-        font-size: 55%;
-    }
-
-    header {
-        padding: 2rem;
-    }
-
-    section {
-        padding: 2rem;
-    }
-
-    .home {
-        background-position: left;
-    }
-}
-
-@media (max-width:768px) {
-    header .fa-bars{
-        display: block;
-    }
-
-    header .navbar{
-        position: absolute;
-        top: 100%; left: 0; right: 0;
-        background: #eee;
-        border-top: .1rem solid rgba(0, 0, 0, .1);
-        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-    }
-
-    header #toggler:checked ~ .navbar{
-        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-    }
-
-    header .navbar a{
-        margin:1.5rem;
-        padding:1.5rem;
-        background: #fff;
-        border: .1rem solid rgba(0, 0, 0, .1);
-        display: block;
-    }
-
-    .home .content h3{
-        font-size: 5rem;
-    }
-
-    .home .content span{
-        font-size: 2.5rem;
-    }
-
-    .icons-container .icons h3{
-        font-size: 2rem;
-    }
-    
-    .icons-container .icons span{
-        font-size: 1.7rem;
-    }
-}
-
-@media (max-width:450px) {
-    html{
-        font-size: 50%;
-    }
-
-    .heading{
-        font-size: 3rem;
-    }
 }
